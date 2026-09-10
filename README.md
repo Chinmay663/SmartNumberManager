@@ -29,14 +29,6 @@ Fast Phone Lookup
 
 Phone numbers are indexed using an unordered_map.
 
-Phone Number
-      │
-      ▼
-unordered_map
-      │
-      ▼
- Contact
-
 This provides average O(1) phone-number lookup.
 
 Prefix Name Search
@@ -59,71 +51,12 @@ Undo System
 
 Contact modifications are stored using a stack.
 
-Most recent action
-       ↓
-   ┌─────────┐
-   │ Delete  │
-   ├─────────┤
-   │   Add   │
-   ├─────────┤
-   │ Delete  │
-   └─────────┘
-
 The stack follows LIFO (Last In, First Out) behavior, allowing the most recent operation to be undone first.
 
 Alphabetical Sorting
 
 Contacts can be sorted alphabetically by name using Merge Sort, providing O(N log N) sorting complexity.
 
-Application Flow
-             ┌──────────────┐
-             │    Start     │
-             └──────┬───────┘
-                    │
-                    ▼
-          Load contacts from CSV
-                    │
-                    ▼
-             Build indexes
-              /           \
-             ▼             ▼
-     Phone Hash Map      Name Trie
-             │             │
-             └──────┬──────┘
-                    ▼
-                Main Menu
-                    │
-       ┌────────────┼────────────┐
-       ▼            ▼            ▼
-      Add         Search       Delete
-       │            │            │
-       ▼            ▼            ▼
-    Update       Hash/Trie    Update
-    indexes       lookup      indexes
-       │                         │
-       └──────────┬──────────────┘
-                  ▼
-             Save to CSV
-Project Structure
-SmartContactManager/
-│
-├── data/
-│   └── contacts.csv
-│
-├── include/
-│   ├── Contact.h
-│   ├── ContactManager.h
-│   ├── FileManager.h
-│   ├── Trie.h
-│   ├── UndoManager.h
-│   └── Validator.h
-│
-├── src/
-│   ├── main.cpp
-│   └── ContactManager.cpp
-│
-├── CMakeLists.txt
-└── README.md
 Architecture
 
 The project separates responsibilities across multiple components:
