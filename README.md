@@ -127,7 +127,7 @@ Main Menu
 5. Undo Last Action
 6. Sort Alphabetically (Merge Sort)
 7. Exit
-
+   
 Enter choice:
 Adding a Contact
 Name: John Doe
